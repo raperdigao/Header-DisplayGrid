@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: 
+        "col1 col2 col3";
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    align-items: center; /* Centraliza verticalmente os itens no header */
+}
+
+.col1 {
+    grid-area: col1;
+    border: 2px solid red;
+}
+
+.col2 {
+    grid-area: col2;
+    border: 2px solid yellow;
+    height: 20vh;
+}
+
+.col3 {
+    grid-area: col3;
+    text-align: right; /* Alinha o conteúdo à direita */
+    border: 2px solid green;
+}
+
+
+nav {
+    display: grid;
+    justify-items: end;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 15px;
+    
+
+}
+
+/* Adiciona regras de estilo para telas menores (responsividade) */
+@media screen and (max-width: 600px) {
+    .header {
+        grid-template-columns: 1fr; /* Uma única coluna para telas menores */
+        grid-template-areas: 
+            "col1"
+            "col2"
+            "col3";
+    }
+
+    nav {
+        text-align: center; /* Centraliza os links em telas menores */
+    }
+
+    .col2 a {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
